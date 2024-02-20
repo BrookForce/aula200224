@@ -7,12 +7,28 @@
         <title>Aula 200224</title>
     </head>
     <body>
-        <div>
-            
+        <div id="app">
+            <h1>{{x}}</h1>
+            <hr>
+            <h2>{{n3**3}} {{n5**3}} {{n10**3}}</h2>
+            <hr>
         </div>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script>
-
+            const app = Vue.createApp(
+                {
+                    data() 
+                    {
+                        return{
+                            x : 'hello world',
+                            n3 : 3,
+                            n5 : 5,
+                            n10 : 10
+                        }
+                    }
+                }
+            )
+            app.mount('#app')
         </script>
     </body>
 </html>
