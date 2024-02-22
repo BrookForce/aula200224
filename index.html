@@ -12,6 +12,11 @@
             <hr>
             <h2>{{n3**3}} {{n5**3}} {{n10**3}}</h2>
             <hr>
+            <input type="number" v-model="useHours"> translate to {{useHours*60}} minutes
+            <input type="number" v-model="useMinutes"> translate to {{useMinutes*60}} seconds
+            <hr>
+            <input type="number" v-model="number1">
+            <span v-if="number1>number2">></span>
         </div>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script>
@@ -23,7 +28,9 @@
                             x : 'hello world',
                             n3 : 3,
                             n5 : 5,
-                            n10 : 10
+                            n10 : 10,
+                            useHours : 0,
+                            useMinutes : 0
                         }
                     }
                 }
