@@ -17,6 +17,11 @@
             <hr>
             <input type="number" v-model="number1">
             <span v-if="number1>number2">></span>
+            <hr>
+            {{ arraySum(array) }}
+            <hr>
+            <input type="number" v-model="userInputNumber">
+            {{sumNumber(userInputNumber)}}
         </div>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script>
@@ -30,7 +35,31 @@
                             n5 : 5,
                             n10 : 10,
                             useHours : 0,
-                            useMinutes : 0
+                            useMinutes : 0,
+                            useName : '',
+                            useNumber : '',
+                            array : [1,2,3]
+                        }
+                    },
+                    methods:
+                    {
+                        arraySum(array)
+                        {
+                            sum=0
+                            for(i=0; i<array.length; i++)
+                            {
+                               sum += array[i];  
+                            }
+                            return sum;
+                        },
+                        sumNumber(userInputNumber)
+                        {
+                            base=1;
+                            for(i=0; i<=userInputNumber; i++)
+                            {
+                                base+=userInputNumber;
+                            }
+                            return base;
                         }
                     }
                 }
